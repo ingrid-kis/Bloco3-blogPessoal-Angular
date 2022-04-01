@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignComponent } from './sign/sign.component';
 import { StartComponent } from './start/start.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { StartComponent } from './start/start.component';
     FooterComponent,
     LoginComponent,
     SignComponent,
-    StartComponent
+    StartComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
