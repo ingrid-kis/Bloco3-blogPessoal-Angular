@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+.font-tam-48{
+    font-size: 48pt;
+}
+
+.font-tam-20 {
+    font-size: 20pt;
+}
+
+.font-tam-30 {
+    font-size: 30pt;
+}
