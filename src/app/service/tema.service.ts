@@ -30,8 +30,20 @@ export class TemaService {
     return this.http.get<Tema[]>("https://blog-pessoal-kis.herokuapp.com/tema", this.token)
   }
 
-  postTema(tema:Tema): Observable<Tema>{
+  getByIdTema(id: number): Observable<Tema>{
+    return this.http.get<Tema>(`https://blog-pessoal-kis.herokuapp.com/tema/${id}`, this.token)
+  }
+
+  postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>("https://blog-pessoal-kis.herokuapp.com/tema", tema, this.token)
   }
 
+  putTema(tema:Tema): Observable<Tema>{
+    return this.http.put<Tema>("https://blog-pessoal-kis.herokuapp.com/tema", tema, this.token)
+  }
+
+  //?id é um parâmetro, então se atentar à crases e ${}
+  deleteTema(id:number){
+    return this.http.delete(`https://blog-pessoal-kis.herokuapp.com/tema/${id}`, this.token)
+  }
 }
