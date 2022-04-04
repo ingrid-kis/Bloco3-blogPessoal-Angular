@@ -1,8 +1,8 @@
 //módulos
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http' //libera os métodos CRUD
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; //libera ngModel
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
