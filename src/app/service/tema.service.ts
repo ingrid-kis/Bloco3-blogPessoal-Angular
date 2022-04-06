@@ -42,7 +42,7 @@ export class TemaService {
     return this.http.put<Tema>("https://blog-pessoal-kis.herokuapp.com/tema", tema, this.token)
   }
 
-  //?id é um parâmetro, então se atentar à crases e ${}
+  //? id é um parâmetro, então se atentar à crases e ${}
   deleteTema(id:number){
     return this.http.delete(`https://blog-pessoal-kis.herokuapp.com/tema/${id}`, this.token)
   }

@@ -45,7 +45,7 @@ export class PostagemEditComponent implements OnInit {
     })
   }
 
-  findByIdTema(id: number){
+  findByIdTema(){
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
       this.tema = resp
     })
