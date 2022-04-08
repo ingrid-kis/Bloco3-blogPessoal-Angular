@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class SignComponent implements OnInit {
   constructor(
     private authService: AuthService, //tudo dentro do construtor é injeção de dependência
     private router: Router,
+    private alertas: AlertasService,
     
   ) { }
 
@@ -36,12 +38,12 @@ export class SignComponent implements OnInit {
     this.user.tipo = this.tipoUsuario
 
     if(this.user.senha != this.confirmarSenha ){
-      alert("As senhas não estão iguais!")
+      this.alertas.showAlertDanger("As senhas não estão iguais!")
     }else{
       this.authService.cadastrar(this.user).subscribe((resp: User)=> {
         this.user = resp
         this.router.navigate(["/login"])
-        alert("Usuário cadastrado com sucesso!")
+        this.alertas.showAlertSuccess("Usuário cadastrado com sucesso!")
       })
     }
   }
