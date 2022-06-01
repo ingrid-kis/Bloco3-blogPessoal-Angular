@@ -49,5 +49,13 @@ export class AuthService {
     return this.http.get<User>(`https://blog-pessoal-kis.herokuapp.com/usuarios/${id}`, this.token)
   }
 
+  adm(){
+    let ok: boolean = false;
+
+    if (environment.tipo == "adm"){ //se meu environment for diferente de vazio
+      ok = true //ok recebe true
+    }
+    return ok
+  }
 
 }

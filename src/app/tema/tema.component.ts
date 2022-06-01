@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -19,17 +20,25 @@ export class TemaComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private alertas: AlertasService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
+
+    window.scroll(0,0)
 
     if(environment.token == ""){
       this.alertas.showAlertInfo("Sua seção expirou, faça o login novamente.")
       this.router.navigate(["/login"])
     }
 
-    this.findAllTemas()
+    if(environment.tipo != "adm"){
+    this.alertas.showAlertInfo("Rota autorizada somente para usuário administrador.")
+    this.router.navigate(["/start"])
+    }
 
+    this.authService.refreshToken()
+    this.findAllTemas()
   }
 
   findAllTemas(){

@@ -38,7 +38,7 @@ export class StartComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private auth: AuthService,
+    public auth: AuthService,
     private alertas: AlertasService,
   ) { }
 
