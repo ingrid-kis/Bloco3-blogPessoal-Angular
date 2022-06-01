@@ -37,10 +37,11 @@ export class LoginComponent implements OnInit {
 
       //this.userLogin.foto
 
-      this.router.navigate(["/start"])
+      this.alertas.showAlertSuccess("Usuário logado com sucesso!")
+      this.router.navigate(['/start'])
       },
       error: erro => {
-      if(erro.status == 401){
+      if(erro.status == 500){
         this.alertas.showAlertDanger("Usuário e/ou Senha incorretos!")
       }
       },

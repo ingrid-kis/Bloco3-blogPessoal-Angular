@@ -11,10 +11,10 @@ export class AlertasService {
     private bsModalService: BsModalService
   ) { }
 
-  private showAlert(message: string, tipo: string){
+  private showAlert(message: string, type: string){
     const bsModalRef: BsModalRef = this.bsModalService.show(AlertasComponent)
     //criou uma Constante bsModalRef que vai receber esse (this.bsModalService) pra mostrar o componente (AlertasComponent) como u m MODAL 
-    bsModalRef.content.type = tipo
+    bsModalRef.content.type = type
     bsModalRef.content.message = message
     //conteúdos do modal: Tipo e message
   }

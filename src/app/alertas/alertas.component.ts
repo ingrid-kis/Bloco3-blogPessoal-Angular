@@ -10,7 +10,7 @@ export class AlertasComponent implements OnInit {
 
   //anotação para importar uma variável que está em outro Service: 
   @Input() message: string;
-  @Input() tipo: string = "success"; //já definiu o tipo que vai receber(=) (success)
+  @Input() type: string = "success"; //já definiu o tipo que vai receber(=) (success)
 
   constructor(
     public modal: BsModalRef,
